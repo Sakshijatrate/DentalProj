@@ -1,0 +1,35 @@
+<div class="main">
+    <div class="left">
+        <img src="assets/girl.jpg" alt="Dental Girl" class="background-img">
+        <img src="assets/teeth.jpg" alt="Teeth X-ray" class="overlay-img">
+    </div>
+
+    <div class="right">
+        <div class="content">
+            <div class="logo">
+                <img src="assets/logo.jpg" alt="Dental Logo">
+            </div>
+            <h3>WELCOME TO</h3>
+            <h1><span class="blue-text">Dental</span> Implant</h1>
+
+            <form (ngSubmit)="login()">
+                <label for="username">Username</label>
+                <input type="text" id="username" [(ngModel)]="username" name="username" placeholder="Enter Patient Name" required/>
+              
+                <label for="password">Password</label>
+                <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Enter Password" required/>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#">Create free account</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+

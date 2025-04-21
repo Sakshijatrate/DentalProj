@@ -1,0 +1,297 @@
+/* Reset default margins and paddings */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-Page Centering */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Main container */
+.main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Left Section - Image Container */
+.left {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Image */
+.background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+}
+
+/* X-ray Overlay Image */
+.overlay-img {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 200px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Right Section - Login Form */
+.right {
+    width: 50%;
+    background-color: #0d1b2a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.content {
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+}
+
+/* Logo */
+.logo img {
+    width: 60px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+/* Welcome Title */
+h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 30px;
+    color: #4ea8de;
+    margin-bottom: 8px;
+}
+
+.blue-text {
+    color: #026aaa;
+}
+
+/* Form Styling */
+form {
+    width: 100%;
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1c2a3a;
+    color: white;
+    outline: none;
+}
+
+/* Form Options (Remember Me & Forgot Password) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Checkbox Styling */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+/* Checkbox Customization */
+.checkbox-label input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #4ea8de;
+}
+
+/* Forgot Password Link */
+.form-options a {
+    color: #4ea8de;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #4ea8de;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #3a82b1;
+}
+
+/* Sign-up Link */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+p a {
+    color: #4ea8de;
+    text-decoration: none;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
+    .main {
+        width: 95%;
+        height: auto;
+    }
+    .left {
+        width: 50%;
+        height: 350px;
+    }
+    .right {
+        width: 50%;
+        padding: 30px;
+    }
+}
+
+/* Responsive Design for Mobile Phones */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .left {
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .background-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-img {
+        width: 100px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .right {
+        padding: 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Small Phones (iPhone SE & Below 400px) */
+@media (max-width: 400px) {
+    .main {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .left {
+        height: 180px;
+    }
+
+    .overlay-img {
+        width: 80px;
+        top: 5px;
+        left: 10px;
+    }
+
+    .right {
+        padding: 20px;
+    }
+
+    .content {
+        max-width: 260px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    form input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+}

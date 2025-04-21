@@ -1,0 +1,117 @@
+<div class="main-layout">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <h3>Implant Details</h3>
+      
+      <label>
+        Tooth Number:
+        <select>
+          <option *ngFor="let num of allToothNumbers">{{ num }}</option>
+        </select>
+      </label>
+      <div class="controls">
+        <label>
+          Diameter:
+          <select (change)="changeDiameter($event)" [value]="selectedDiameter">
+            <option *ngFor="let d of diameters" [value]="d">{{ d }} mm</option>
+          </select>
+        </label>
+        <label>
+          Length:
+          <select (change)="changeLength($event)" [value]="selectedLength">
+            <option *ngFor="let l of lengths" [value]="l">{{ l }} mm</option>
+          </select>
+        </label>
+      </div>
+  
+      <label>
+        Notes:
+        <textarea rows="5" placeholder="Write notes here..."></textarea>
+      </label>
+      
+      <div class="added-implants mt-3">
+        <h3 style="color: white; font-size: 16px;">Added Implants</h3>
+        <div *ngIf="addedImplants.length === 0" style="color: gray; font-size: 13px;">
+          No implants added yet.
+        </div>
+        <div *ngFor="let implant of addedImplants" class="implant-entry">
+          <div><strong>Tooth:</strong> {{ implant.toothNumber }}</div>
+          <div><strong>Size:</strong> {{ implant.diameter }} × {{ implant.length }}</div>
+          <div><strong>Type:</strong> {{ implant.type }}</div>
+          <div *ngIf="implant.notes"><strong>Notes:</strong> {{ implant.notes }}</div>
+          <hr style="border-color: #444;" />
+        </div>
+      </div>
+      
+    </div>
+   
+    
+  
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <div class="upper-implants">
+        <div *ngFor="let img of upperImplants" class="implant-container">
+          <div class="implant-image-wrapper">
+            <img [src]="img.src"
+                 [id]="img.id"
+                 draggable="true"
+                 (dragstart)="onDragStart($event, img, 'upper')" />
+          </div>
+          <span class="implant-label">{{ img.id }}</span>
+        </div>
+      </div>
+      
+  
+       <div class="main-image-container"
+     #mainImageContainer
+     (drop)="onDrop($event)"
+     (dragover)="onDragOver($event)"
+     (click)="deselectImplant($event)">
+
+  
+        <img *ngIf="uploadedImageSrc" [src]="uploadedImageSrc" class="main-image" />
+  
+        <div *ngFor="let implant of droppedImplants"
+             class="dropped-implant"
+             [ngStyle]="{
+               top: implant.y + 'px',
+               left: implant.x + 'px',
+               width: implant.diameter + 'mm',
+               height: implant.length + 'mm',
+               transform: 'rotate(' + implant.rotation + 'deg)'
+             }"
+             (mousedown)="startMove($event, implant)"
+             (mousemove)="moveImplant($event, implant)"
+             (mouseup)="endMove(implant)"
+             (click)="selectImplant(implant)">
+  
+          <img [src]="implant.src" />
+          
+          <div class="selection-overlay" *ngIf="implant.isSelected">
+            <div class="rotate-arrow left" (click)="rotateSelectedImplant(-10, implant)">
+              <img src="assets/icons/rotate-left.svg" alt="Rotate Left" />
+            </div>
+            <div class="rotate-arrow right" (click)="rotateSelectedImplant(10, implant)">
+              <img src="assets/icons/rotate-right.svg" alt="Rotate Right" />
+            </div>
+            <div class="size-indicator">{{ implant.diameter }}mm × {{ implant.length }}mm</div>
+          </div>
+  
+        </div>
+      </div>
+  
+      <div class="lower-implants">
+        <div *ngFor="let img of lowerImplants" class="implant-container">
+          <img [src]="img.src"
+               [id]="img.id"
+               draggable="true"
+               (dragstart)="onDragStart($event, img, 'lower')" />
+          <span>{{ img.id }}</span>
+        </div>
+      </div>
+  
+      
+  
+    </div>
+  </div>
+  

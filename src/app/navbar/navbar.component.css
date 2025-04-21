@@ -1,0 +1,76 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    gap:3rem;
+    background-color: #202937;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0px 1px 5px rgba(255, 255, 255, 0.3);
+    height: 80px;
+  
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 2rem;
+  }
+
+.nav-button{
+    color: #b0b3b8;
+    font-size: 14px;
+}
+
+.active-link {
+    color: rgb(127, 191, 226) !important;  /* Text color */
+    text-decoration: underline !important; /* Underline effect */
+    text-underline-offset: 7px;
+    font-weight: bold; /* Optional: Make it bold */
+  }
+  
+
+.report-button{
+    background-color: #3b82f6 !important;
+    color: white !important;
+    margin-left: 10px;
+  
+}
+
+.spacer{
+    flex: 1 1 auto;
+}
+
+.profile-icon
+{
+    margin-right: 5rem;
+    margin-bottom: 20px;
+}
+.profile-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-left: 3rem;
+  }
+
+  /* navbar.component.css */
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  
+  @media (min-width: 1024px) {
+    .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+  }
+  

@@ -1,0 +1,251 @@
+/* Dark Theme */
+body {
+  background-color: #202937;
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+}
+
+/* Main Layout */
+.main-layout {
+  display: flex;
+  justify-content: space-between;
+  height: 85%;
+  padding: 20px;
+  background-color: black;
+  gap: 20px;
+}
+
+/* Left Panel */
+.left-panel {
+  width: 300px;
+  height: 75vh;
+  padding: 30px;
+  background-color: #1D2229;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #cbd5e1;
+}
+
+.left-panel h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.left-panel label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.left-panel select,
+.left-panel textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Right Panel */
+.right-panel {
+  flex: 1;
+  min-width: 0;
+  height: 75vh;
+  padding: 20px;
+  background-color: #1D2229;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+/* Implant Rows */
+.upper-implants,
+.lower-implants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin: 7px;
+  background-color: #273144;
+  border-radius: 6px;
+  padding: 7px;
+}
+
+.implant-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  color: #cbd5e1;
+}
+
+.implant-image-wrapper img {
+  transform: rotate(180deg);
+}
+
+.implant-label {
+  transform: none !important;
+}
+
+
+.implant-container span {
+  transform: none !important;
+  writing-mode: horizontal-tb;
+  text-align: center;
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+.upper-implants img {
+  transform: rotate(180deg);
+}
+
+.upper-implants img,
+.lower-implants img {
+  width: 10px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+/* Main Image Container */
+.main-image-container {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  border: 1px dashed #64748b;
+  border-radius: 10px;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.main-image {
+  max-width: 100%;
+  height: 100%;
+}
+
+.file-input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Dropped Implant */
+.dropped-implant {
+  position: absolute;
+  cursor: move;
+}
+
+.dropped-implant img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Selection Overlay */
+.selection-overlay {
+  position: absolute;
+  border: 1px dashed #4dabf7;
+  border-radius: 50%;
+  top: -25px;
+  left: -25px;
+  width: calc(100% + 50px);
+  height: calc(100% + 50px);
+  pointer-events: none;
+}
+
+/* Rotation Arrows */
+.rotate-arrow {
+  position: absolute;
+  font-size: 12px;
+  color: #38bdf8;
+  cursor: pointer;
+  background: #1e293b;
+  border-radius: 50%;
+  padding: 2px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 14px;
+  border: 1px solid #38bdf8;
+}
+
+.rotate-arrow.left {
+  top: 50%;
+  left: -12px;
+  transform: translateY(-50%);
+}
+
+.rotate-arrow.right {
+  top: 50%;
+  right: -12px;
+  transform: translateY(-50%);
+}
+
+/* Size Indicator */
+.size-indicator {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  padding: 2px 6px;
+  font-size: 10px;
+  line-height: 1.2;
+  white-space: nowrap;
+  border: 2px solid #4dabf7;
+  border-radius: 4px;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+/* Added Implants List */
+.added-implants {
+  background: #1e1e2f;
+  padding: 10px;
+  border-radius: 6px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.added-implants .implant-entry {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+
+
+/* Implant Main Container */
+.implant-main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .implant-main-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1600px) {
+  .implant-main-container {
+    max-width: 1600px;
+    margin: auto;
+  }
+}

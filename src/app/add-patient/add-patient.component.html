@@ -1,0 +1,70 @@
+<div class="dialog-container">
+<h2 class="form-title">Add New Patient</h2>
+<form>
+
+  <div class="form-group">
+    <label>ID:</label>
+    <input [(ngModel)]="patient.id" name="id" required>
+  </div>
+
+  <div class="form-group">
+    <label>Name:</label>
+    <input [(ngModel)]="patient.name" name="name" required>
+  </div>
+
+  <div class="form-group">
+    <label>Date:</label>
+    <input [(ngModel)]="patient.date" name="date" type="date" required>
+  </div>
+
+  <div class="form-group">
+    <label>Age:</label>
+    <input [(ngModel)]="patient.age" name="age" type="number" required>
+  </div>
+
+  <div class="form-group">
+    <label>Type:</label>
+    <input [(ngModel)]="patient.type" name="type" required>
+  </div>
+
+  <div class="form-group">
+    <label>Status:</label>
+    <select [(ngModel)]="patient.status" name="status">
+      <option>COMPLETED</option>
+      <option>IN PROGRESS</option>
+      <option>PENDING</option>
+    </select>
+  </div>
+
+  <h3 class="form-subtitle">Add Implant Details</h3>
+
+  <div class="form-group">
+    <label>Tooth Number:</label>
+    <input [(ngModel)]="implant.tooth" name="tooth">
+  </div>
+
+  <div class="form-group">
+    <label>Diameter:</label>
+    <input [(ngModel)]="implant.diameter" name="diameter">
+  </div>
+
+  <div class="form-group">
+    <label>Length:</label>
+    <input [(ngModel)]="implant.length" name="length">
+  </div>
+
+  <button type="button" (click)="addImplantDetail()">Add Implant</button>
+
+  <!-- <ul>
+    <li *ngFor="let i of patient.implants; let idx = index">
+      No of implant: {{ i.tooth }} | Size: {{ i.diameter }}mm x {{ i.length }}mm
+      <button type="button" (click)="removeImplantDetail(idx)">Remove</button>
+    </li>
+  </ul> -->
+
+  <div class="form-buttons">
+    <button type="button" (click)="save()">Save</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>
+</div>

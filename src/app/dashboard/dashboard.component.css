@@ -1,0 +1,177 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  background-color: #121212;
+}
+
+/* Center the table */
+.table-container {
+  max-width: 1400px;
+  height: 528px;
+  margin: 50px auto;
+  padding: 40px;
+  /* background: #222; */
+  color: white;
+}
+
+/* Remove table border */
+table {
+  border: none !important;
+  box-shadow: none !important;
+ 
+  
+}
+
+.table-header
+{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+
+}
+
+/* Header row and table headers (Dark Grey) */
+.table-header, th {
+  background-color: #1D2229 !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 15px;
+  text-align: left;
+  text-align: center;
+}
+
+/* Table body rows (Faint Grey) */
+td {
+  padding: 12px;
+  background: #334155;
+  color: white;
+  text-align: center;
+  
+}
+
+
+/* Search & Add Patient Container */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+}
+
+/* Search input */
+.search-box {
+  background: #334155;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* Add Patient Button */
+.add-patient {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Button Hover Effect */
+.add-patient:hover {
+  background-color: #0056b3;
+}
+
+/* Status Styles */
+.status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 15px;
+  text-align: center;
+  display: inline-block;
+  min-width: 100px;
+}
+
+/* Status Colors */
+.status.COMPLETED {
+  background-color: #90ee90 !important;
+  color: black !important;
+}
+
+.status.PENDING {
+  background-color: #ebb732 !important;
+  color: black !important;
+}
+
+.status.IN-PROGRESS {
+  background-color: #4689c8 !important;
+  color: black !important;
+}
+
+
+.continue-ana-btn{
+  background-color: #007BFF;
+  color: white;
+  height: 3rem;
+  
+}
+
+.continue-ana-btn:hover{
+  background-color: #1059a7;
+  color: white;
+  height: 3rem;
+  
+}
+.view-report-btn{
+  color: white;
+  border-color: #007BFF;
+  height: 3rem;
+ 
+}
+
+/* Hover Effect for View Report Button */
+::ng-deep .view-report-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important; /* Light background on hover */
+}
+
+/* Flexbox container for buttons */
+::ng-deep .action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Adjust space between buttons */
+}
+
+:host ::ng-deep .mat-mdc-paginator {
+background-color:#1D2229  !important;
+ color: white !important;  
+
+}
+
+
+::ng-deep .mat-mdc-paginator .mat-mdc-paginator-range-actions span {
+  color: white !important;
+} 
+
+/* dashboard.component.css */
+.dashboard-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (min-width: 1600px) {
+  .dashboard-container {
+    max-width: 1400px;
+    margin: auto;
+    gap: 25px;
+  }
+}

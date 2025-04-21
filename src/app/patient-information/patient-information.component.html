@@ -1,0 +1,62 @@
+<div class="patient-info-container">
+    <!-- Left Side: Patient Details -->
+    <div class="patient-form">
+        <h3>Basic Details</h3>
+
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" [(ngModel)]="patient.id" disabled />
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" [(ngModel)]="patient.name" placeholder="Enter Patient Name" (input)="checkFormCompletion()" />
+        </div>
+
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" [(ngModel)]="patient.age" placeholder="Enter Age" (input)="checkFormCompletion()" />
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <select [(ngModel)]="patient.gender" (change)="checkFormCompletion()">
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Right Side: Image Upload -->
+    <div class="image-upload">
+        <h3>OPG Image</h3>
+
+        <div class="upload-box" [class.image-preview]="uploadedImage">
+            <input type="file" id="fileInput" accept="image/*" (change)="onFileChange($event)" />
+            <label for="fileInput" *ngIf="!uploadedImage">Choose File</label>
+
+            <div *ngIf="!uploadedImage">
+                <p>Upload OPG Image</p>
+                <p style="font-size: 12px; color: #64748b;">PNG, JPG up to 10MB</p>
+            </div>
+
+            <img *ngIf="uploadedImage" [src]="uploadedImage" alt="Uploaded Image" class="full-image" />
+        </div>
+    </div>
+</div>
+
+<!-- Navigation Buttons -->
+<div class="button-container">
+    <div class="left">
+        <p class="text">Next: Implant/Crown Analysis</p>
+        <!-- <p class="text1" *ngIf="!isFormComplete" style="visibility: visible;">Please Upload OPG First</p>
+        <p class="text1" *ngIf="isFormComplete" style="visibility: hidden;">Please Upload OPG First</p> -->
+        <p class="text1" [ngStyle]="{'visibility': isFormComplete ? 'hidden' : 'visible'}">Please Upload OPG First</p>
+
+    </div>
+    <div class="right">
+        <button class="cancel-button">Cancel</button>
+        <button class="continue-button" [disabled]="!isFormComplete" [class.enabled]="isFormComplete" (click)="continue()">Continue</button>
+    </div>
+</div>
